@@ -47,7 +47,18 @@ def main():
     parser.add_argument(
         "--video-preset",
         default="fast",
-        choices=["ultrafast", "superfast", "veryfast", "faster", "fast", "medium", "slow", "slower", "veryslow", "placebo"],
+        choices=[
+            "ultrafast",
+            "superfast",
+            "veryfast",
+            "faster",
+            "fast",
+            "medium",
+            "slow",
+            "slower",
+            "veryslow",
+            "placebo",
+        ],
         help="Пресет кодирования видео (быстрее -> лучше сжатие)",
     )
 
