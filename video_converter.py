@@ -6,7 +6,17 @@ import subprocess
 from tqdm import tqdm
 
 logger = logging.getLogger(__name__)
-SUPPORTED_FORMATS = (".mp4", ".avi", ".mov", ".mkv", ".flv", ".wmv", ".webm", ".3gp", ".vob")
+SUPPORTED_FORMATS = (
+    ".mp4",
+    ".avi",
+    ".mov",
+    ".mkv",
+    ".flv",
+    ".wmv",
+    ".webm",
+    ".3gp",
+    ".vob",
+)
 
 
 def find_video_files(directory):
@@ -24,9 +34,12 @@ def get_video_creation_date(input_path):
     try:
         cmd = [
             "ffprobe",
-            "-v", "error",
-            "-show_entries", "format_tags=creation_time",
-            "-of", "default=noprint_wrappers=1:nokey=1",
+            "-v",
+            "error",
+            "-show_entries",
+            "format_tags=creation_time",
+            "-of",
+            "default=noprint_wrappers=1:nokey=1",
             input_path,
         ]
         result = subprocess.run(cmd, capture_output=True, text=True, check=True)
